@@ -28,15 +28,6 @@ const blogSchema = new mongoose.Schema({
 
     subcategory: [String],
 
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-
-    updatedAt: {
-        type: Date
-    },
-
     deletedAt: {
 
         type: Date
@@ -63,7 +54,7 @@ const blogSchema = new mongoose.Schema({
 
     }
 
-})
+},  { timestamps: true})
 
 
 

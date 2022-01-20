@@ -4,15 +4,11 @@ const jwt = require('jsonwebtoken')
 
 const createAuthor = async function(req, res) {
     try {
-
         let body = req.body;
         let data = await AuthorModel.create(body);
         res.status(201).send({ status: true, msg: data })
-
     } catch (err) {
-
         res.status(400).send({ msg: err.message })
-
     }
 }
 
@@ -21,7 +17,6 @@ const login = async function(req, res) {
     let userpassword = req.body.password
     if (useremail && userpassword) {
         let User = await AuthorModel.findOne({ email: useremail, password: userpassword })
-
         if (User) {
             const Token = jwt.sign({ userId: User._id }, "Group2")
             res.header('x-api-key', Token)

@@ -8,11 +8,11 @@ const Midd = require('../middleware/authMiddleware')
 
 
 router.post("/authors", AuthorController.createAuthor)
-router.post("/blogs", Midd.middleWare, BlogController.createBlog)
-router.get("/blogs", Midd.middleWare, BlogController.fetchBlogs)
-router.put("/blogs/:blogId", Midd.middleWare, BlogController.updateBlog)
-router.delete("/blogs/:blogId", Midd.middleWare, BlogController.deleteById)
-router.delete("/blogs", Midd.middleWare, BlogController.deleteByQuery)
+router.post("/createBlogs", Midd.middleWare, BlogController.createBlog)
+router.get("/fetchblogs", Midd.middleWare, BlogController.fetchBlogs)
+router.put("/updateblogs/:blogId", Midd.middleWare, BlogController.updateBlog)
+router.delete("/deleteblogs/:blogId", Midd.middleWare, BlogController.deleteById)
+router.delete("/queryblogs", Midd.middleWare, BlogController.deleteByQuery)
 router.post("/login", AuthorController.login)
 
 module.exports = router;
